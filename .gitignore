@@ -2,3 +2,4 @@ pkg.new
 pkg.og
 *.tar*
 src
+.DS_Store
