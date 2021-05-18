@@ -19,7 +19,8 @@ makedepends=(spice-protocol python ceph libiscsi glusterfs python-sphinx xfsprog
 source=(https://download.qemu.org/qemu-$pkgver.tar.xz{,.sig}
         build-most-modules-statically-hack.diff
         qemu-guest-agent.service
-        65-kvm.rules)
+        65-kvm.rules
+        ashDrive.patch)
 sha512sums=('ee3ff00aebec4d8891d2ff6dabe4e667e510b2a4fe3f6190aa34673a91ea32dcd2db2e9bf94c2f1bf05aa79788f17cfbbedc6027c0988ea08a92587b79ee05e4'
             'SKIP'
             '8721068fb968dbae62ceff71aa46eb4c2452c7fde95b87396b439f2f927ea84d2ee2c512264a9f28a5ccaf3096aacce052cebf209aaffd62a201b5bafb512002'
