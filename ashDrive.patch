@@ -1,6 +1,6 @@
 diff --unified --recursive --text pkg.og/qemu-6.0.0/hw/ide/core.c pkg.new/qemu-6.0.0/hw/ide/core.c
---- pkg.og/qemu-6.0.0/hw/ide/core.c	2021-05-11 08:58:26.000000000 -0600
-+++ pkg.new/qemu-6.0.0/hw/ide/core.c	2021-05-11 09:00:04.000000000 -0600
+--- qemu-6.0.0/hw/ide/core.c	2021-05-11 08:58:26.000000000 -0600
++++ qemu-6.0.0/hw/ide/core.c	2021-05-11 09:00:04.000000000 -0600
 @@ -2560,7 +2560,7 @@
              strcpy(s->drive_model_str, "QEMU MICRODRIVE");
              break;
@@ -11,8 +11,8 @@ diff --unified --recursive --text pkg.og/qemu-6.0.0/hw/ide/core.c pkg.new/qemu-6
          }
      }
 diff --unified --recursive --text pkg.og/qemu-6.0.0/hw/scsi/scsi-disk.c pkg.new/qemu-6.0.0/hw/scsi/scsi-disk.c
---- pkg.og/qemu-6.0.0/hw/scsi/scsi-disk.c	2021-05-11 08:58:26.000000000 -0600
-+++ pkg.new/qemu-6.0.0/hw/scsi/scsi-disk.c	2021-05-11 09:00:04.000000000 -0600
+--- qemu-6.0.0/hw/scsi/scsi-disk.c	2021-05-11 08:58:26.000000000 -0600
++++ qemu-6.0.0/hw/scsi/scsi-disk.c	2021-05-11 09:00:04.000000000 -0600
 @@ -2441,7 +2441,7 @@
      s->qdev.blocksize = s->qdev.conf.logical_block_size;
      s->qdev.type = TYPE_DISK;
