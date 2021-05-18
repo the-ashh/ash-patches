@@ -40,7 +40,7 @@ prepare() {
   # https://bugs.launchpad.net/qemu/+bug/1910696
   # the patch comes from https://salsa.debian.org/qemu-team/qemu/-/blob/master/debian/patches/build-most-modules-statically-hack.diff
   patch -p1 < ../build-most-modules-statically-hack.diff
-  patch -p1 < ../ashDrive.patch
+  patch --strip=1 < ../ashDrive.patch
 }
 
 build() {
