@@ -1,0 +1,17 @@
+diff '--color=auto' --unified --recursive --text --color src/edk2-202102/OvmfPkg/SmbiosPlatformDxe/SmbiosPlatformDxe.c src-new/edk2-202102/OvmfPkg/SmbiosPlatformDxe/SmbiosPlatformDxe.c
+--- src/edk2-202102/OvmfPkg/SmbiosPlatformDxe/SmbiosPlatformDxe.c	2021-03-01 22:11:55.000000000 -0700
++++ src-new/edk2-202102/OvmfPkg/SmbiosPlatformDxe/SmbiosPlatformDxe.c	2021-05-19 12:58:38.666770116 -0600
+@@ -11,9 +11,9 @@
+ #include "SmbiosPlatformDxe.h"
+ 
+ #define TYPE0_STRINGS \
+-  "EFI Development Kit II / OVMF\0"     /* Vendor */ \
+-  "0.0.0\0"                             /* BiosVersion */ \
+-  "02/06/2015\0"                        /* BiosReleaseDate */
++  "American Megatrends Inc\0"     /* Vendor */ \
++  "F9\0"                             /* BiosVersion */ \
++  "10/15/2019\0"                        /* BiosReleaseDate */
+ //
+ // Type definition and contents of the default Type 0 SMBIOS table.
+ //
+Only in src: smbiosAMT.patch

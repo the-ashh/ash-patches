@@ -20,7 +20,8 @@ source=("$pkgbase-$pkgver.tar.gz::https://github.com/tianocore/${pkgbase}/archiv
         "50-edk2-ovmf-x86_64-secure.json"
         "60-edk2-ovmf-i386.json"
         "60-edk2-ovmf-x86_64.json"
-        "70-edk2-armvirt-aarch64.json")
+        "70-edk2-armvirt-aarch64.json"
+        "smbiosAMT.patch")
 sha512sums=('d3dab4559b5d24b03d1066039beac787f6c8d3c4fbc14294c4836bcdf6eaa9d1f9654b65e24eeb0709348b63a9b13ebbfcfa11609ff710374838d91b51b9f414'
             '51e44995663b5258b0018bdc1e2b0e7e8e0cce111138ca1f80514456af920fce4e409a411ce117c0f3eb9190ac3e47c53a43f39b06acd35b7494e2bec4a607d5'
             'SKIP'
@@ -30,7 +31,8 @@ sha512sums=('d3dab4559b5d24b03d1066039beac787f6c8d3c4fbc14294c4836bcdf6eaa9d1f96
             'a1236585b30d720540de2e9527d8c90ff2d428e800b3da545b23461dc698dc91fe441b62bb8cbca76e08f4ec1eb485619e9ab26157deb06e7fb33e7f5f9dd8b6'
             'c81e072aabfb01d29cf5194111524e2c4c8684979de6b6793db10299c95bb94f7b1d0a98b057df0664d7a894a2b40e9b4c3576112fae400a95eaf5fe5fc9369b'
             '2030dc1d49d56fce8af56c5777fd40f04041e39ff806dd8c021e161227bdd646982024db6758230b8332dc68f16bc6918e1d54ad3c022e21e148d6b65ea778b3'
-            'fa6d36a3c0225e4a5df532e77b18a035d65b0856d6a48875def5007de3f83d8d1d202d5b91e887d424112a3fa377dc9a09bdf44e5fcdccc36854675f95a211a4')
+            'fa6d36a3c0225e4a5df532e77b18a035d65b0856d6a48875def5007de3f83d8d1d202d5b91e887d424112a3fa377dc9a09bdf44e5fcdccc36854675f95a211a4'
+            'SKIP')
 b2sums=('48a0804ad92cce9d5783dc9ea1e8815414f77fb49d7f51401f314215d203a4be2b70e446267200366e2d0c41df92aa07d399207be3c0dbf565bece1b7eb452dd'
         'e5699abeca83acd82546e74a0645f2a765d51f22226f8c537d92285eb0b11e12b0a9476cbd3cb6a594e9840433d713be39884fb4dcd5c3968b36ad4f582ed23a'
         'SKIP'
@@ -40,7 +42,8 @@ b2sums=('48a0804ad92cce9d5783dc9ea1e8815414f77fb49d7f51401f314215d203a4be2b70e44
         '4a438a2f7726c6a9ff1a40506ddb5f724d5c220b57997784fefe4a180e249b4f1e9adc8e353e7dbc492a1bde0165442d873409656ce2fbbc9fd35c690b7692e4'
         '5da17cfe08368542f04b47121b296c56a6702233207b1cdb822eea42c8fb43d8856e86d19122621caf97e4332814c839204d7ce191041128ee3921b23f137bb6'
         '1b935f3ad0bd3f10a90430a2873bf592950e9c49c828b50bb1ae48634cee01cc571aeff1c5b4695e0b4faa6274afc0a92fdcc88e283029298bba5e11b2bd2904'
-        '2fd510c533913bbd13fa31b3fdc8c4435bb3dee4ae8d34a516344da7a31ee036b23ac21e09b59b11f507520abeea89271601228f485ee80866bade0140c81742')
+        '2fd510c533913bbd13fa31b3fdc8c4435bb3dee4ae8d34a516344da7a31ee036b23ac21e09b59b11f507520abeea89271601228f485ee80866bade0140c81742'
+        'SKIP')
 validpgpkeys=('8657ABB260F056B1E5190839D9C4D26D0E604491') # Matt Caswell <matt@openssl.org>
 _arch_list=('AARCH64' 'IA32' 'X64')
 _build_type='RELEASE'
@@ -52,7 +55,7 @@ prepare() {
   # patch to be able to use brotli 1.0.9
   patch -Np1 -i "../${pkgbase}-202102-brotli-1.0.9.patch"
   # NOTE: patching brotli itself is not necessary (extra/brotli cherry-picks a patch for the pkgconfig integration)
-
+  patch --strip=2 < ../smbiosAMT.patch
   # symlinking openssl into place
   rm -rfv CryptoPkg/Library/OpensslLib/openssl
   ln -sfv "${srcdir}/openssl-$_openssl_ver" CryptoPkg/Library/OpensslLib/openssl
