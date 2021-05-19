@@ -3,3 +3,5 @@ pkg.og
 *.tar*
 src
 .DS_Store
+zen-kernel
+
