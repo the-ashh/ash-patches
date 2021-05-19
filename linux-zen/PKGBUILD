@@ -1,11 +1,11 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-pkgbase=linux-zen
-pkgver=5.12.4.zen1
-pkgrel=2
-pkgdesc='Linux ZEN'
+pkgbase=linux-zen-ash-patches
+pkgver=5.12.5.zen1
+pkgrel=3
+pkgdesc='Linux ZEN (ash patches)'
 _srctag=v${pkgver%.*}-${pkgver##*.}
-url="https://github.com/zen-kernel/zen-kernel/commits/$_srctag"
+url="https://github.com/the-ashh/ash-patches"
 arch=(x86_64)
 license=(GPL2)
 makedepends=(
@@ -74,9 +74,9 @@ _package() {
   depends=(coreutils kmod initramfs)
   optdepends=('crda: to set the correct wireless channels of your country'
               'linux-firmware: firmware images needed for some devices')
-  provides=(VIRTUALBOX-GUEST-MODULES WIREGUARD-MODULE VHBA-MODULE)
+  provides=(VIRTUALBOX-GUEST-MODULES WIREGUARD-MODULE VHBA-MODULE linux-zen)
   replaces=()
-
+  conflicts=(linux-zen)
   cd $_srcname
   local kernver="$(<version)"
   local modulesdir="$pkgdir/usr/lib/modules/$kernver"
