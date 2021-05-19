@@ -1,6 +1,6 @@
 diff -ruN linux-5.9.2/arch/x86/kvm/svm/svm.c linux-5.9.2-patch/arch/x86/kvm/svm/svm.c
---- linux-5.9.2/arch/x86/kvm/svm/svm.c	2020-10-29 10:12:22.000000000 +0100
-+++ linux-5.9.2-patch/arch/x86/kvm/svm/svm.c	2020-10-30 22:38:08.893100407 +0100
+--- arch/x86/kvm/svm/svm.c	2020-10-29 10:12:22.000000000 +0100
++++ arch/x86/kvm/svm/svm.c	2020-10-30 22:38:08.893100407 +0100
 @@ -1041,6 +1041,7 @@
  	svm_set_intercept(svm, INTERCEPT_XSETBV);
  	svm_set_intercept(svm, INTERCEPT_RDPRU);
@@ -78,8 +78,8 @@ diff -ruN linux-5.9.2/arch/x86/kvm/svm/svm.c linux-5.9.2-patch/arch/x86/kvm/svm/
  
  static void dump_vmcb(struct kvm_vcpu *vcpu)
 diff -ruN linux-5.9.2/arch/x86/kvm/x86.c linux-5.9.2-patch/arch/x86/kvm/x86.c
---- linux-5.9.2/arch/x86/kvm/x86.c	2020-10-29 10:12:22.000000000 +0100
-+++ linux-5.9.2-patch/arch/x86/kvm/x86.c	2020-10-30 21:29:50.866180190 +0100
+--- arch/x86/kvm/x86.c	2020-10-29 10:12:22.000000000 +0100
++++ arch/x86/kvm/x86.c	2020-10-30 21:29:50.866180190 +0100
 @@ -3163,6 +3163,9 @@
  
  int kvm_get_msr_common(struct kvm_vcpu *vcpu, struct msr_data *msr_info)
@@ -141,8 +141,8 @@ diff -ruN linux-5.9.2/arch/x86/kvm/x86.c linux-5.9.2-patch/arch/x86/kvm/x86.c
  {
  	if (!kvm_arch_vcpu_runnable(vcpu) &&
 diff -ruN linux-5.9.2/include/linux/kvm_host.h linux-5.9.2-patch/include/linux/kvm_host.h
---- linux-5.9.2/include/linux/kvm_host.h	2020-10-29 10:12:22.000000000 +0100
-+++ linux-5.9.2-patch/include/linux/kvm_host.h	2020-10-30 21:30:33.539340889 +0100
+--- include/linux/kvm_host.h	2020-10-29 10:12:22.000000000 +0100
++++ include/linux/kvm_host.h	2020-10-30 21:30:33.539340889 +0100
 @@ -286,6 +286,9 @@
  	unsigned int halt_poll_ns;
  	bool valid_wakeup;
@@ -154,8 +154,8 @@ diff -ruN linux-5.9.2/include/linux/kvm_host.h linux-5.9.2-patch/include/linux/k
  	int mmio_needed;
  	int mmio_read_completed;
 diff -ruN linux-5.9.2/.vscode/settings.json linux-5.9.2-patch/.vscode/settings.json
---- linux-5.9.2/.vscode/settings.json	1970-01-01 01:00:00.000000000 +0100
-+++ linux-5.9.2-patch/.vscode/settings.json	2020-10-30 21:29:37.269606033 +0100
+--- .vscode/settings.json	1970-01-01 01:00:00.000000000 +0100
++++ .vscode/settings.json	2020-10-30 21:29:37.269606033 +0100
 @@ -0,0 +1,5 @@
 +{
 +    "files.associations": {
