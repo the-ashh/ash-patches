@@ -4,13 +4,13 @@ gpg --receive-keys ABAF11C65A2970B130ABE3C479BE3E4300411886 647F28654894E3BD4571
 mkdir output
 
 cd linux-zen
-MAKEFLAGS="-j$(nproc)" makepkg -s --noconfirm
+MAKEFLAGS="-j$(nproc)" LC_ALL="C" makepkg -s --noconfirm
 
 cd ../edk2
-MAKEFLAGS="-j$(nproc)" makepkg -s --noconfirm
+MAKEFLAGS="-j$(nproc)" LC_ALL="C" makepkg -s --noconfirm
 
 cd ../qemu
-MAKEFLAGS="-j$(nproc)" makepkg -s --noconfirm
+MAKEFLAGS="-j$(nproc)" LC_ALL="C" makepkg -s --noconfirm
 
 cd ..
 mv */*.pkg.tar.zst ./output/
