@@ -9,8 +9,7 @@ archlinux:
     - base-devel
   # pacman packages
   before_install:
-  - "sudo localectl set-locale LANG=en_US.UTF-8"
-  - "unset LANG; source /etc/profile.d/locale.sh"
+  - "unset LANG"
   script:
   - "sh build.sh"
 
