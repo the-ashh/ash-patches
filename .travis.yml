@@ -4,8 +4,6 @@ services:
 - docker
 
 archlinux:
-  repos:
-  - papyros=http://dash.papyros.io/repos/$repo/$arch
   packages:
     - base
     - base-devel
