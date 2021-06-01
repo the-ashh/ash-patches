@@ -13,5 +13,5 @@ MAKEFLAGS="-j$(nproc)" makepkg -s --noconfirm
 cd ../qemu
 MAKEFLAGS="-j$(nproc)" makepkg -s --noconfirm
 
-cd ..
-mv */*.pkg.tar.zst ./output/
+cd ../
+cp */*.pkg.tar.zst output
