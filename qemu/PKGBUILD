@@ -35,7 +35,7 @@ case $CARCH in
 esac
 
 prepare() {
-  mkdir build-{full,headless}
+  mkdir -p build-{full,headless}
   mkdir -p extra-arch-{full,headless}/usr/{bin,share/qemu}
 
   cd qemu-$pkgver
