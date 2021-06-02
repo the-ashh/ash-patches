@@ -2,7 +2,7 @@
 this is a mirror of some upstream arch packages, with custom patches that help with vm detection/evasion
 
 # download
-i have set up a custom repo for these packages. in order to use it, you have to make an edit to your `pacman.conf`. open up `/etc/pacman.conf` in your most favourite editor, then before the rest of your repos, add this block:
+i have set up a custom repo for these packages. in order to use it, you'll first have to download [this](https://github.com/the-ashh/ash-patches/releases/tag/v1.0). this is the keyring package for the packages in my server. then, you'll have to make an edit to your `pacman.conf`. open up `/etc/pacman.conf` in your most favourite editor, then before the rest of your repos, add this block:
 ```
 [ash-pkgs]
 Server = https://mirror.theash.xyz/$repo
