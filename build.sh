@@ -4,6 +4,7 @@ gpg --receive-keys ABAF11C65A2970B130ABE3C479BE3E4300411886 647F28654894E3BD4571
 mkdir -p output
 
 git submodule init
+git submodule update
 
 cd linux-zen
 MAKEFLAGS="-j$(nproc)" makepkg -sf --noconfirm
