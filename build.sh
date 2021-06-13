@@ -7,13 +7,13 @@ git submodule init
 git submodule update
 
 cd linux-zen
-MAKEFLAGS="-j$(nproc)" makepkg -sf --noconfirm
+MAKEFLAGS="-j$(nproc)" makepkg -s --noconfirm
 
 cd ../edk2
-MAKEFLAGS="-j$(nproc)" makepkg -sf --noconfirm
+MAKEFLAGS="-j$(nproc)" makepkg -s --noconfirm
 
 cd ../qemu
-MAKEFLAGS="-j$(nproc)" makepkg -sf --noconfirm
+MAKEFLAGS="-j$(nproc)" makepkg -s --noconfirm
 
 cd ../ash-keyring
 makepkg -sf --noconfirm
