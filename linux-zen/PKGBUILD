@@ -2,7 +2,7 @@
 
 pkgbase=linux-zen-ash-patches
 pkgver=5.12.12.zen1
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux ZEN (ash patches)'
 _srctag=v${pkgver%.*}-${pkgver##*.}
 url="https://github.com/the-ashh/ash-patches"
