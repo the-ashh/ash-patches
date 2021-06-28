@@ -1,8 +1,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen-ash-patches
-pkgver=5.12.12.zen1
-pkgrel=2
+pkgver=5.12.13.zen1
+pkgrel=1
 pkgdesc='Linux ZEN (ash patches)'
 _srctag=v${pkgver%.*}-${pkgver##*.}
 url="https://github.com/the-ashh/ash-patches"
@@ -26,7 +26,7 @@ validpgpkeys=(
   'A2FF3A36AAA56654109064AB19802F8B0D70FC30'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            'f82d246ac82ea50c6a23664012b3098176e8c3025d08e814a2540d2a638433df'
+            '266d2468e278a058a82389def73b6eb69ac3543a2b1e008225b774a1a05ef1f8'
             '2edf7b8905046bbf96f399ce2abadef87851fd299e798616f53697893529747e')
 
 export KBUILD_BUILD_HOST=archlinux
