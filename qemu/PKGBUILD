@@ -17,7 +17,7 @@ _headlessdeps=(seabios gnutls libpng libaio numactl libnfs
 depends=(virglrenderer sdl2 vte3 libpulse libjack.so brltty "${_headlessdeps[@]}")
 makedepends=(spice-protocol python ceph libiscsi glusterfs python-sphinx python-sphinx_rtd_theme xfsprogs ninja)
 source=(https://download.qemu.org/qemu-$pkgver.tar.xz{,.sig}
-        build-most-modules-statically-hack.diff
+        #build-most-modules-statically-hack.diff
         qemu-guest-agent.service
         65-kvm.rules
         ashDrive.patch)
